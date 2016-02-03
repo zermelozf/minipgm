@@ -1,3 +1,10 @@
+# Eclipse files
 .project
 .pydevproject
+
+# Compiled stuff
 *.pyc
+
+# Automatically created folders
+examples/.ipynb_checkpoints/
+minipgm.egg-info/

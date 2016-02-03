@@ -9,7 +9,8 @@ from inspect import getargspec
 import numpy as np
 from scipy.stats import beta, invgamma, laplace, norm
 from scipy.stats import binom, bernoulli, uniform
-from qmmc.distrib import sep_rvs, sep_logpdf
+
+from .distributions import sep_rvs, sep_logpdf
 
 
 class Error(Exception):
