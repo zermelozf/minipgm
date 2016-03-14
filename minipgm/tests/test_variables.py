@@ -3,8 +3,7 @@ import unittest
 import numpy as np
 from numpy.testing import assert_array_less
 
-from minipgm.variables import Value, Normal, BernoulliNormal, Beta, Binomial
-from minipgm.distributions import truncnorm_rvs
+from minipgm.variables import Value, Normal, Beta, Binomial
 
 class TestVariables(unittest.TestCase):
 
@@ -32,32 +31,7 @@ class TestVariables(unittest.TestCase):
         self.assertAlmostEqual(
             x.value.mean(), mu.value, delta=3 * sigma.value / np.sqrt(1000))
         
-        x.logp()
-    
-    def test_truncated_normal(self):
-        
-        n = 10
-        lower = np.array(range(n))
-        upper = np.inf
-        x = truncnorm_rvs(lower, upper, loc=0, scale=1, shape=(n, ))
-        assert_array_less(lower, x)
-        
-        lower = -np.inf
-        upper = np.array(range(n))
-        x = truncnorm_rvs(lower, upper, loc=0, scale=1, shape=(n, ))
-        np.testing.assert_array_less(x, upper)
-    
-    
-    def test_bernoulli_normal(self):
-        
-        mu, sigma = Value(0), Value(1)
-        p = Beta(Value(2), Value(2), name='p')
-        k = Binomial(p, k=Value(5), name='k')
-        x = BernoulliNormal(mu, sigma, k, name='x')
-        k.sample()
-        x.sample()
-        
-        
+        x.logp()  
         
 
 if __name__ == "__main__":
