@@ -3,7 +3,8 @@
 # minipgm
 Minimalistic probabilistic graphical model framework
 
-# Installation
+Installation
+------------
 
 Before installing the package, please check that you have all the required
 libraries installed:
@@ -25,4 +26,8 @@ Testing
 python -m unittest discover -v
 ```
 
+Example
+-------
+
+See `examples/` notebooks.
 
