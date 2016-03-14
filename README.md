@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zermelozf/minipgm.svg?branch=master)](https://travis-ci.org/zermelozf/minipgm)
+
 # minipgm
 Minimalistic probabilistic graphical model framework
 
