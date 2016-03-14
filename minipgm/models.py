@@ -50,5 +50,4 @@ class Model(object):
             for sampler in self.samplers.values():
                 sampler.sample()
             self.logp_hist.append(self.logp())
-#            self.logp_sample_hist.append(self.logp_sample())
         print "100%"
