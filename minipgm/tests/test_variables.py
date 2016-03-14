@@ -3,8 +3,8 @@ import unittest
 import numpy as np
 from numpy.testing import assert_array_less
 
-from qmmc.variables import Value, Normal, BernoulliNormal, Beta, Binomial
-from qmmc.distrib import truncnorm_rvs
+from minipgm.variables import Value, Normal, BernoulliNormal, Beta, Binomial
+from minipgm.distributions import truncnorm_rvs
 
 class TestVariables(unittest.TestCase):
 
@@ -54,11 +54,8 @@ class TestVariables(unittest.TestCase):
         p = Beta(Value(2), Value(2), name='p')
         k = Binomial(p, k=Value(5), name='k')
         x = BernoulliNormal(mu, sigma, k, name='x')
-        print k.value
-        print x.value
-        
-        print k.sample()
-        print x.sample()
+        k.sample()
+        x.sample()
         
         
         

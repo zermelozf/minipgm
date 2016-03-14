@@ -92,12 +92,13 @@ class BaseVariable(object):
         pass
 
 
-class Value(object):
+class Value(BaseVariable):
 
     def __init__(self, value):
+        
+        super(Value, self).__init__(
+                parents={}, value=value, observed=True, name='value', size=None)
 
-        self.value = value
-        self._observed = True
         self._deterministic = True
         self.parent = {}
         self.children = set()
@@ -108,10 +109,10 @@ class Value(object):
     def __repr__(self):
         return str(self.value)
 
-    def sample(self):
+    def _sample(self):
         raise SamplingObservedVariableError()
 
-    def logp(self):
+    def _logp(self):
         return 0.
 
 
